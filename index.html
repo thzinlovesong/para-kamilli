@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Kamilli 💜</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000814 100%);
+color:white;
+}
+
+/* Estrelas */
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:transparent;
+}
+
+.stars span{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+from{opacity:0.3}
+to{opacity:1}
+}
+
+/* Estrelas cadentes */
+.shooting-star{
+position:absolute;
+width:3px;
+height:100px;
+background:linear-gradient(-45deg, white, transparent);
+opacity:0;
+animation:shoot 8s linear infinite;
+}
+
+@keyframes shoot{
+0%{
+transform:translateX(0) translateY(0) rotate(45deg);
+opacity:1;
+}
+100%{
+transform:translateX(-1000px) translateY(1000px) rotate(45deg);
+opacity:0;
+}
+}
+
+/* Aurora Boreal */
+.aurora{
+position:fixed;
+width:200%;
+height:200%;
+top:-50%;
+left:-50%;
+background:
+radial-gradient(circle at 30% 40%, rgba(174,0,255,0.4), transparent 50%),
+radial-gradient(circle at 70% 60%, rgba(0,255,200,0.4), transparent 50%),
+radial-gradient(circle at 50% 30%, rgba(0,100,255,0.4), transparent 50%);
+animation:auroraMove 20s infinite alternate ease-in-out;
+filter:blur(80px);
+}
+
+@keyframes auroraMove{
+0%{transform:rotate(0deg) scale(1);}
+100%{transform:rotate(5deg) scale(1.2);}
+}
+
+/* Conteúdo */
+.container{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:90%;
+max-width:800px;
+text-align:center;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 40px rgba(138,43,226,0.4);
+animation:fadeIn 2s ease;
+}
+
+h1{
+font-family:'Great Vibes', cursive;
+font-size:60px;
+color:#ffb3ff;
+text-shadow:0 0 15px #ff00ff;
+margin-bottom:20px;
+}
+
+p{
+margin:15px 0;
+line-height:1.8;
+font-size:17px;
+color:#e0e0ff;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translate(-50%, -60%);}
+to{opacity:1; transform:translate(-50%, -50%);}
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg, #8a2be2, #00ffff);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.4s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #00ffff;
+}
+
+</style>
+</head>
+<body>
+
+<div class="aurora"></div>
+
+<div class="stars" id="stars"></div>
+
+<div class="shooting-star" style="top:10%; left:80%; animation-delay:1s;"></div>
+<div class="shooting-star" style="top:20%; left:90%; animation-delay:4s;"></div>
+<div class="shooting-star" style="top:5%; left:70%; animation-delay:6s;"></div>
+
+<div class="container">
+
+<h1>Kamilli 💜</h1>
+
+<p>
+Talvez você ainda não saiba o tamanho do que eu sinto.
+Mas desde que você apareceu na minha vida,
+alguma coisa aqui dentro mudou.
+</p>
+
+<p>
+Não é só admiração… não é só carinho…
+é aquela sensação diferente,
+que faz o coração acelerar
+só de ver uma notificação sua.
+</p>
+
+<p>
+Eu não tô aqui pra forçar nada,
+nem pra prometer o mundo.
+Eu só quero que você saiba
+que o que eu sinto é verdadeiro.
+</p>
+
+<p>
+Eu gosto do seu jeito,
+do seu sorriso,
+do jeito que você fala,
+até dos seus detalhes que talvez você nem perceba.
+</p>
+
+<p>
+A verdade é que,
+se um dia você me der a chance,
+eu quero ser alguém que te faça sorrir de verdade.
+Sem pressão.
+Sem pressa.
+Só algo leve… mas sincero.
+</p>
+
+<p>
+E enquanto isso,
+eu continuo aqui…
+gostando de você,
+no meu tempo,
+no seu tempo,
+do jeito mais bonito que eu sei sentir.
+</p>
+
+<button onclick="document.getElementById('music').play()">Ouvir nossa música 🎵</button>
+
+<audio id="music" loop>
+<source src="ssstik.io_1777502811833.mp3" type="audio/mp3">
+</audio>
+
+</div>
+
+<script>
+
+/* Criar estrelas aleatórias */
+for(let i=0;i<150;i++){
+let star=document.createElement("span");
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+star.style.animationDuration=(Math.random()*3+1)+"s";
+document.getElementById("stars").appendChild(star);
+}
+
+</script>
+
+</body>
+</html>
